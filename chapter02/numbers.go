@@ -1,9 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"os/exec"
+)
 
 // function main begins program execution
 func main() {
+
+	// clear cmd on first run
+	c := exec.Command("clear")
+	c.Stdout = os.Stdout
+	c.Run()
 
 	// working with complex numbers
 	c1 := 12 + 1i
@@ -18,5 +27,17 @@ func main() {
 
 	cZero := c3 - c3
 	fmt.Println("cZero:", cZero)
+	fmt.Println()
+
+	// ===========================
+	// Working with Integers
+	// ===========================
+	x := 12
+	k := 5
+	fmt.Println(x)
+	fmt.Printf("Type of x: %T\n", x)
+
+	div := x / k
+	fmt.Println("div", div)
 
 }
